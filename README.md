@@ -16,13 +16,7 @@ A floating, translucent, and interactive widget for Windows that automatically d
 
 ## Setup Instructions
 
-### 1. Download & Run (Ready-made App)
-If you don't want to deal with Python and just want to run the application directly:
-1. Go to the [Releases](https://github.com/KostasBex04/AntigravityWidget/releases) page of this repository.
-2. Download the `AntigravityWidget.zip` or `.exe` file.
-3. Double-click the file to run it. No installation is required!
-
-### 2. Running from source
+### 1. Running from source
 If you want to run the python code directly:
 1. Clone this repository to your local machine.
 2. Install the necessary dependencies:
@@ -34,7 +28,7 @@ If you want to run the python code directly:
    python main.py
    ```
 
-### 3. Building your own App (.exe)
+### 2. Building your own App (.exe)
 If you made changes to the code and want to package it into a single `.exe` file, use PyInstaller:
 ```bash
 pip install pyinstaller
