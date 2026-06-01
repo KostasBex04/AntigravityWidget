@@ -16,7 +16,14 @@ A floating, translucent, and interactive widget for Windows that automatically d
 
 ## Setup Instructions
 
-### 1. Running from source
+### 1. Download & Run (Ready-made App)
+If you don't want to deal with Python and just want to run the application directly:
+1. Navigate to the `releases` folder in this repository.
+2. Download the `AntigravityWidget.exe` file.
+3. Double-click the file to run it. No installation is required!
+
+### 2. Running from source
+If you want to run the python code directly:
 1. Clone this repository to your local machine.
 2. Install the necessary dependencies:
    ```bash
@@ -27,13 +34,13 @@ A floating, translucent, and interactive widget for Windows that automatically d
    python main.py
    ```
 
-### 2. Building the standalone App (.exe)
-If you want to package the app into a standalone executable that runs without installing Python, use PyInstaller:
+### 3. Building your own App (.exe)
+If you made changes to the code and want to package it into a single `.exe` file, use PyInstaller:
 ```bash
 pip install pyinstaller
-python -m PyInstaller --noconfirm --onedir --windowed --name "AntigravityWidget" "main.py"
+python -m PyInstaller --noconfirm --onefile --windowed --name "AntigravityWidget" "main.py"
 ```
-The final standalone app will be generated inside the `dist/AntigravityWidget` folder. You can zip this folder and share it directly with friends.
+The final standalone app will be generated inside the `dist/` folder as a single `AntigravityWidget.exe` file.
 
 ## Important Note
 This application reads the internal logs (`%APPDATA%\Antigravity IDE\logs`) to dynamically find the correct process ID and authorization tokens. **Do not share your authorization tokens**. By sharing only the application, the app securely uses the tokens of whoever is running it on their local machine.
