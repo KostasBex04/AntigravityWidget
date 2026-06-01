@@ -18,8 +18,8 @@ A floating, translucent, and interactive widget for Windows that automatically d
 
 ### 1. Download & Run (Ready-made App)
 If you don't want to deal with Python and just want to run the application directly:
-1. Navigate to the `releases` folder in this repository.
-2. Download the `AntigravityWidget.exe` file.
+1. Go to the [Releases](https://github.com/KostasBex04/AntigravityWidget/releases) page of this repository.
+2. Download the `AntigravityWidget.zip` or `.exe` file.
 3. Double-click the file to run it. No installation is required!
 
 ### 2. Running from source
