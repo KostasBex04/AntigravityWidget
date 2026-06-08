@@ -9,16 +9,16 @@ class ModelLimitWidget(QWidget):
         self.model_name = model_name
         
         layout = QVBoxLayout()
-        layout.setContentsMargins(10, 5, 10, 5)
-        layout.setSpacing(5)
+        layout.setContentsMargins(8, 8, 8, 8)
+        layout.setSpacing(6)
         
         # Header layout (Name and Usage Text)
         header_layout = QHBoxLayout()
         self.name_label = QLabel(model_name)
-        self.name_label.setStyleSheet("color: #E0E0E0; font-weight: bold; font-size: 13px; font-family: 'Segoe UI', Arial;")
+        self.name_label.setStyleSheet("color: #FFFFFF; font-weight: 600; font-size: 13px; font-family: 'Segoe UI', Arial;")
         
         self.status_label = QLabel("Loading...")
-        self.status_label.setStyleSheet("color: #A0A0A0; font-size: 11px; font-family: 'Segoe UI', Arial;")
+        self.status_label.setStyleSheet("color: #B0B0C0; font-size: 11px; font-family: 'Segoe UI', Arial;")
         self.status_label.setAlignment(Qt.AlignmentFlag.AlignRight | Qt.AlignmentFlag.AlignVCenter)
         
         header_layout.addWidget(self.name_label)
@@ -27,19 +27,19 @@ class ModelLimitWidget(QWidget):
         # Indicator bar using QProgressBar
         from PyQt6.QtWidgets import QProgressBar
         self.progress = QProgressBar()
-        self.progress.setFixedHeight(4)
+        self.progress.setFixedHeight(6)
         self.progress.setTextVisible(False)
         self.progress.setRange(0, 100)
         self.progress.setValue(100)
         self.progress.setStyleSheet("""
             QProgressBar {
-                background-color: #3A3A4A;
+                background-color: #2A2A35;
                 border: none;
-                border-radius: 2px;
+                border-radius: 3px;
             }
             QProgressBar::chunk {
                 background-color: #8A2BE2;
-                border-radius: 2px;
+                border-radius: 3px;
             }
         """)
         
@@ -69,13 +69,13 @@ class ModelLimitWidget(QWidget):
             
         self.progress.setStyleSheet(f"""
             QProgressBar {{
-                background-color: #3A3A4A;
+                background-color: #2A2A35;
                 border: none;
-                border-radius: 2px;
+                border-radius: 3px;
             }}
             QProgressBar::chunk {{
                 background-color: {color};
-                border-radius: 2px;
+                border-radius: 3px;
             }}
         """)
 
@@ -93,30 +93,30 @@ class AntigravityWidget(QWidget):
         self.setWindowFlags(Qt.WindowType.FramelessWindowHint | Qt.WindowType.WindowStaysOnTopHint | Qt.WindowType.Tool)
         self.setAttribute(Qt.WidgetAttribute.WA_TranslucentBackground)
         
-        self.setFixedWidth(360)
+        self.setFixedWidth(320)
         
         # Main layout
         self.main_layout = QVBoxLayout()
         # This makes the window auto-shrink to fit contents perfectly
         self.main_layout.setSizeConstraint(QVBoxLayout.SizeConstraint.SetFixedSize)
-        self.main_layout.setContentsMargins(20, 20, 20, 20)
-        self.main_layout.setSpacing(10)
+        self.main_layout.setContentsMargins(18, 18, 18, 18)
+        self.main_layout.setSpacing(12)
         
         # Title Label
         title = QLabel("Antigravity IDE Limits")
         title.setAlignment(Qt.AlignmentFlag.AlignCenter)
-        title.setStyleSheet("color: #FFFFFF; font-size: 16px; font-weight: bold; font-family: 'Segoe UI', Arial;")
+        title.setStyleSheet("color: #FFFFFF; font-size: 14px; font-weight: bold; font-family: 'Segoe UI', Arial; margin-bottom: 4px;")
         self.main_layout.addWidget(title)
         
         # Container for the models
         self.models_layout = QVBoxLayout()
-        self.models_layout.setSpacing(5)
+        self.models_layout.setSpacing(8)
         self.main_layout.addLayout(self.models_layout)
         
         # Close Button instructions
         close_label = QLabel("Right-click for options • Double-click to close")
         close_label.setAlignment(Qt.AlignmentFlag.AlignCenter)
-        close_label.setStyleSheet("color: #606060; font-size: 10px; font-family: 'Segoe UI', Arial; margin-top: 10px;")
+        close_label.setStyleSheet("color: #606060; font-size: 10px; font-family: 'Segoe UI', Arial; margin-top: 8px;")
         self.main_layout.addWidget(close_label)
         self.setLayout(self.main_layout)
 
@@ -149,14 +149,14 @@ class AntigravityWidget(QWidget):
         painter.setRenderHint(QPainter.RenderHint.Antialiasing)
         
         path = QPainterPath()
-        path.addRoundedRect(QRectF(self.rect()), 15.0, 15.0)
+        path.addRoundedRect(QRectF(self.rect()), 16.0, 16.0)
         
         # Semi-transparent dark background (glassy effect)
-        bg_color = QColor(25, 25, 35, 230)
+        bg_color = QColor(22, 22, 32, 245)
         painter.fillPath(path, bg_color)
         
         # Subtle border
-        painter.setPen(QColor(60, 60, 80, 200))
+        painter.setPen(QColor(80, 80, 100, 150))
         painter.drawPath(path)
 
     def update_data(self, limits_data):

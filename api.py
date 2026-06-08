@@ -77,14 +77,8 @@ class RealApiWorker(QThread):
                 
                 # Desired order based on user feedback
                 desired_order = [
-                    "Gemini 3.5 Flash (Medium)",
-                    "Gemini 3.5 Flash (High)",
-                    "Gemini 3.5 Flash (Low)",
-                    "Gemini 3.1 Pro (Low)",
                     "Gemini 3.1 Pro (High)",
-                    "Claude Sonnet 4.6 (Thinking)",
-                    "Claude Opus 4.6 (Thinking)",
-                    "GPT-OSS 120B (Medium)"
+                    "Claude Sonnet 4.6 (Thinking)"
                 ]
                 
                 # First, parse all models into a temporary dictionary
